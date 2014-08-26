@@ -1,0 +1,50 @@
+ 
+
+	<div class = info>
+		<!-- <button type="button" ng-click ="getPatient()">Patient Info</button> -->
+		<input type="text" ng-model="name1" placeholder ="first name">
+		<input type="text" ng-model="name2" placeholder = "last name">
+		<!-- <input type="text" ng-model="address1" placeholder = "street address">
+		<input type="text" ng-model="address2" placeholder = "city">
+		<input type="text" ng-model="address3" placeholder = "state">
+		<input type="number" ng-model="address4" placeholder = "zipcode">
+		<input type="text" ng-model="phone" placeholder = "phone number">
+		<input type="text" ng-model="email" placeholder = "email address">
+		<input type="text" ng-model="injury" placeholder = "injury"> -->
+		<button type="button" ng-click ="addPatient()">submit</button>
+
+	</div>
+	{{info}}
+	<div class = "list">
+		<ul ng-show="show" ng-repeat = "item in info"> 
+			<li ng-repeat = "(key, val) in item">
+			{{key}}: {{val}}</li>
+			<li ng-repeat="(name, item) in info">
+  			<a href="" ng-href="#/info/{{name}}">{{item.text}}</a>
+			
+			</li>
+		</ul>
+		<select class="input-large" ng-model="Day">
+	        <option value = "Mon">Monday</option>
+	        <option value = "Tues">Tuesday</option>
+	        <option value = "Wed">Wednesday</option>
+	        <option value = "Thurs">Thursday</option>   
+    	</select>
+    	<select class="input-large" ng-model="Month">
+	        <option value = "Jan">January</option>
+	        <option value = "Feb">February</option>
+	        <option value = "Mar">March</option>
+	        <option value = "Apr">April</option>   
+    	</select>
+    	<select class="input-large" ng-model="Date">
+	        <option value = "1">1</option>
+	        <option value = "2">2</option>
+	        <option value = "3">3</option>
+	        <option value = "4">4</option>   
+    	</select>
+
+		</div>
+	</div>
+</div>
+
+
