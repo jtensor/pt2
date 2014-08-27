@@ -1,0 +1,26 @@
+Doctor sets up patient homework
+
+<br>
+		<select class="input-large" ng-model="Day" >
+			<option value = "" disabled selected>Day</option>
+	        <option value = "Mon">Monday</option>
+	        <option value = "Tues">Tuesday</option>
+	        <option value = "Wed">Wednesday</option>
+	        <option value = "Thurs">Thursday</option>   
+    	</select>
+    	<select class="input-large" ng-model="Month">
+    		<option value = "" disabled selected>Month</option>
+	        <option value = "Jan">January</option>
+	        <option value = "Feb">February</option>
+	        <option value = "Mar">March</option>
+	        <option value = "Apr">April</option>   
+    	</select>
+    	<select class="input-large" ng-model="number">
+    		<option value = "" disabled selected>Date</option>
+	        <option value = "1">1</option>
+	        <option value = "2">2</option>
+	        <option value = "3">3</option>
+	        <option value = "4">4</option>   
+    	</select>
+    	{{Day}}, {{Month}} {{number}}
+    	<button type="button" ng-click ="addAppt()">submit</button>

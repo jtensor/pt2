@@ -12,15 +12,47 @@ myApp.config(function($stateProvider,$urlRouterProvider){
 		templateUrl:'views/Step1View.html',
 		controller:'dbCtrl'
 	})
-	// .state('patient',{
-	// 	url:'/js/patient',
-	// 	//templateUrl:'views/addview.html',
-	// 	controller:'dbCtrl'
-	// })
-	.state('exercise',{
-		url:'/exercise',
-		templateUrl:'views/ExerciseView.html',
-		controller:'dbCtrl'
+	.state('patient',{
+		url:'/patient/:patientId',		
+		templateUrl:'views/patientView.html',
+		controller:'dbCtrl',
+		resolve:{
+			apptRef: function(dbService, $stateParams){
+				return dbService.getAppt($stateParams.patientId);
+			}
+		}
 	})
+	.state('exercise',{
+			url:'/exercise',
+			templateUrl:'views/exerciseView.html',
+			controller:'dbCtrl'
+	});
+			//EXAMPLE!
+				// .state('secure',{
+				// 	abstract:true,
+				// 	template:'<div ui-view>',
+				// 	controller:'SecureCtrl',
+				// 	resolve:{
+				// 		username:function(UserService){
+				// 			return UserService.getUser();
+				// 		}
+				// 	}
+				// })
+				// .state('secure.thread',{
+				// 	url:'/thread/:threadId',
+				// 	templateUrl:'views/thread.html',
+				// 	controller:'ThreadCtrl',
+				// 	resolve:{
+				// 		threadRef: function(threadService, $stateParams){
+				// 			return threadService.getThread($stateParams.threadId);
+				// 		},
+				// 		commentsRef: function(threadService,$stateParams){
+				// 			return threadService.getComments($stateParams.threadId);
+				// 		}	
+				// 	}
+				// });
+
+
+	
 
 });

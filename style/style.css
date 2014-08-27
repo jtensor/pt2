@@ -4,4 +4,6 @@
 
 .list{
 	border:solid;
+	border-color: red;
+	list-style-type:circle;
 }
