@@ -1,7 +1,7 @@
 // angular
 // 	.module('myApp',['ui.router', 'firebase'])
 
-var myApp = angular.module('myApp', ['ui.router', 'firebase'])	
+var myApp = angular.module('myApp', ['ui.router', 'firebase']);	
 
 myApp.config(function($stateProvider,$urlRouterProvider){
 	$urlRouterProvider.otherwise('/');
@@ -15,44 +15,21 @@ myApp.config(function($stateProvider,$urlRouterProvider){
 	.state('patient',{
 		url:'/patient/:patientId',		
 		templateUrl:'views/patientView.html',
-		controller:'dbCtrl',
-		resolve:{
-			apptRef: function(dbService, $stateParams){
-				return dbService.getAppt($stateParams.patientId);
-			}
-		}
+		controller:'videoCtrl',
+		
 	})
 	.state('exercise',{
 			url:'/exercise',
 			templateUrl:'views/exerciseView.html',
-			controller:'dbCtrl'
+			controller:'apptCtrl',
+			// resolve:{
+			// 	vidRef: function(vidService, $stateParams){
+			// 		return vidService.getVideo($stateParams.patientId);
+			// 	},
+			// 	apptRef: function(dbService, $stateParams){
+			// 		return dbService.getAppt($stateParams.patientId);
+			// 	}
+			// }
 	});
-			//EXAMPLE!
-				// .state('secure',{
-				// 	abstract:true,
-				// 	template:'<div ui-view>',
-				// 	controller:'SecureCtrl',
-				// 	resolve:{
-				// 		username:function(UserService){
-				// 			return UserService.getUser();
-				// 		}
-				// 	}
-				// })
-				// .state('secure.thread',{
-				// 	url:'/thread/:threadId',
-				// 	templateUrl:'views/thread.html',
-				// 	controller:'ThreadCtrl',
-				// 	resolve:{
-				// 		threadRef: function(threadService, $stateParams){
-				// 			return threadService.getThread($stateParams.threadId);
-				// 		},
-				// 		commentsRef: function(threadService,$stateParams){
-				// 			return threadService.getComments($stateParams.threadId);
-				// 		}	
-				// 	}
-				// });
-
-
-	
-
+			
 });

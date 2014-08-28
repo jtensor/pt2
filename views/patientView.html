@@ -1,14 +1,14 @@
 Doctor sets up patient homework
 
 <br>
-		<select class="input-large" ng-model="Day" >
+		<select class="input-large" ng-model="day" >
 			<option value = "" disabled selected>Day</option>
 	        <option value = "Mon">Monday</option>
 	        <option value = "Tues">Tuesday</option>
 	        <option value = "Wed">Wednesday</option>
 	        <option value = "Thurs">Thursday</option>   
     	</select>
-    	<select class="input-large" ng-model="Month">
+    	<select class="input-large" ng-model="month">
     		<option value = "" disabled selected>Month</option>
 	        <option value = "Jan">January</option>
 	        <option value = "Feb">February</option>
@@ -22,5 +22,48 @@ Doctor sets up patient homework
 	        <option value = "3">3</option>
 	        <option value = "4">4</option>   
     	</select>
-    	{{Day}}, {{Month}} {{number}}
+    	<select class="input-large" ng-model="time">
+    		<option value = "" disabled selected>Time</option>
+	        <option value = "7:00">7:00</option>
+	        <option value = "7:30">7:30</option>
+	        <option value = "8:00">8:00</option>
+	        <option value = "8:30">8:30</option>
+	        <option value = "9:00">9:00</option>
+	        <option value = "9:30">9:30</option>   
+	        <option value = "10:00">10:00</option>
+	        <option value = "10:30">10:30</option>
+	        <option value = "11:00">11:00</option>
+    	</select>
+    	{{day}}, {{month}} {{number}} at {{time}}
     	<button type="button" ng-click ="addAppt()">submit</button>
+
+
+
+
+    <div ng-controller="videoCtrl">
+        <label for="searchYoutube">Search YouTube:</label>
+        <input id="searchYoutube" ng-model="query" />
+        <button ng-click="search()">Search</button>
+    
+    <div>
+        <p ng-repeat="res in results">
+            <label>{{res.snippet.title}}</label>
+            <br/>
+            <a ng-href="https://www.youtube.com/watch?v={{res.id.videoId}}">
+                <img ng-src="{{res.snippet.thumbnails.high.url}}" />
+            </a>
+        </p>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
