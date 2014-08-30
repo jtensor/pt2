@@ -41,9 +41,9 @@ Doctor sets up patient homework
 </br>
 
 <div>
-    <select class="input-medium" ng-model="newAssignment.exercise">
+    <select class="input-medium" ng-model="exercises">
         <option value = "" disabled selected>Exercises</option>
-        <option value = "getLowerBody(ankle pump)">Ankle Pump</option>
+        <option value = "exercises('ankle pump')">Ankle Pump</option>
         <option value = "7:30">Quadricep Sets</option>
         <option value = "8:00">Short Arc Quads</option>
         <option value = "8:30">Chair Squat</option>
@@ -56,8 +56,9 @@ Doctor sets up patient homework
 </div>
 <div class="">
     <ul  > 
-            <li ng-repeat = "assignment in newAssignment">
-                {{assignment.exercise}}<br>   <br>
+<!--             <li ng-repeat = "exer in exercises">
+ -->            <li>
+                {{exercises}}<br> {{exercises.id}}  <br>
             </li>
             
         </ul>

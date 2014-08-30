@@ -30,9 +30,14 @@ myApp.config(function($stateProvider,$urlRouterProvider){
 			},
 			assignmentsRef: function(drService, $stateParams){
 				return drService.getAssignments($stateParams.patientId);
+			},
+			upperBodyRef: function(drService){
+				return drService.getUpperBody();
+			},
+			lowerBodyRef: function(drService){
+				return drService.getLowerBody();
 			}
 		}
-		
 	})
 	.state('personal',{
 		url:'/personal/:patientId',
