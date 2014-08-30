@@ -1,7 +1,20 @@
 <div class="appt">
 	
-	Your next appointment is {{appt.day}}, {{appt.month}} {{appt.number}} 
+	Your next appointment is {{appt.day}}, {{appt.month}} {{appt.number}} @ {{appt.time}} 
 </div>
+
+
+<div>
+Your exercises are: </br>
+    <ul>    
+        <li ng-repeat = "assignment in assignments">{{assignment.name}}</br>
+            <a ng-href = "{{assignment.url}}">
+                {{assignment.url}}
+            </a>
+        </li>  
+    </ul>
+
+
 <!-- <div class="logo" ng-controller='videoCtrl'></div> -->
 
 
