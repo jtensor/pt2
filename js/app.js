@@ -9,27 +9,43 @@ myApp.config(function($stateProvider,$urlRouterProvider){
 	$stateProvider
 	.state('home',{
 		url:'/',
-		templateUrl:'views/Step1View.html',
-		controller:'dbCtrl'
+		templateUrl:'views/doctorView1.html',
+		controller:'drCtrl1',
+		resolve:{
+			patientsRef: function(drService) {
+				return drService.getPatients();
+			}
+		}
 	})
 	.state('patient',{
 		url:'/patient/:patientId',		
-		templateUrl:'views/patientView.html',
-		controller:'videoCtrl',
+		templateUrl:'views/doctorView2.html',
+		controller:'drCtrl2',
+		resolve:{
+			patientRef: function(drService, $stateParams){
+				return drService.getPatient($stateParams.patientId);
+			},
+			apptsRef: function(drService, $stateParams){
+				return drService.getAppts($stateParams.patientId);
+			},
+			assignmentsRef: function(drService, $stateParams){
+				return drService.getAssignments($stateParams.patientId);
+			}
+		}
 		
 	})
-	.state('exercise',{
-			url:'/exercise',
-			templateUrl:'views/exerciseView.html',
-			controller:'apptCtrl',
-			// resolve:{
-			// 	vidRef: function(vidService, $stateParams){
-			// 		return vidService.getVideo($stateParams.patientId);
-			// 	},
-			// 	apptRef: function(dbService, $stateParams){
-			// 		return dbService.getAppt($stateParams.patientId);
-			// 	}
-			// }
-	});
+	.state('personal',{
+		url:'/personal/:patientId',
+		templateUrl:'views/patientView.html',
+		controller:'patientCtrl',
+		resolve:{
+			apptRef: function(drService, $stateParams){
+				return drService.getAppt($stateParams.patientId);
+			},
+			assignmentRef: function(drService, $stateParams){
+				return drService.getAssignment($stateParams.patientId);
+			}
+		}
+	 });
 			
 });

@@ -1,0 +1,36 @@
+ 
+
+	<div class = form>
+
+		<input type="text" ng-model="newPatient.firstName" placeholder ="first name">
+		<input type="text" ng-model="newPatient.lastName" placeholder = "last name"><br>
+		<input type="text" ng-model="newPatient.address" placeholder = "street address"><br>
+		<input type="text" ng-model="newPatient.addressCity" placeholder = "city">
+		<input type="text" ng-model="newPatient.addressState" placeholder = "state">
+		<input type="number" ng-model="newPatient.addressZipcode" placeholder = "zipcode"><br>
+		<input type="text" ng-model="newPatient.phone" placeholder = "phone number">
+		<input type="text" ng-model="newPatient.email" placeholder = "email address"><br>
+		<input type="text" ng-model="newPatient.injury" placeholder = "injury"><br>
+		<button type="button" ng-click ="addPatient(newPatient)">submit</button>
+
+	</div>
+
+	<div class = "patients">
+		<ul  > 
+			<li ng-repeat = "patient in patients">
+				<a ui-sref="patient({patientId:patient.$id})">
+				{{patient.firstName}} {{patient.lastName}} </a>---  {{patient.injury}}<br>
+				{{patient.address}} <br>
+				{{patient.addressCity}}, {{patient.addressState}}  {{patient.addressZipcode}}<br>   <br>
+			</li>
+			
+		</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+

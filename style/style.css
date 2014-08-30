@@ -1,9 +1,15 @@
-.patient{
+.form{
 	border-color: red;
 }
 
-.list{
+.patients{
 	border:solid;
-	border-color: red;
+	border-color: blue;
 	list-style-type:circle;
+}
+.schedule{
+	border-color: black;
+}
+.video{
+	border-color: green;
 }
