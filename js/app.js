@@ -8,7 +8,7 @@ myApp.config(function($stateProvider,$urlRouterProvider){
 
 	$stateProvider
 	.state('home',{
-		url:'/',
+		url:'/patient',
 		templateUrl:'views/doctorView1.html',
 		controller:'drCtrl1',
 		resolve:{
@@ -36,8 +36,16 @@ myApp.config(function($stateProvider,$urlRouterProvider){
 			},
 			lowerBodyRef: function(drService){
 				return drService.getLowerBody();
+			},
+			cardioRef: function(drService){
+				return drService.getCardio();
 			}
 		}
+	})
+	.state('login',{
+		url:'/',
+		templateUrl:'views/loginView.html',
+		controller:'loginCtrl'
 	})
 	.state('personal',{
 		url:'/personal/:patientId',

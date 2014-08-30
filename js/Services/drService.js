@@ -22,10 +22,13 @@ angular
 	 			return $firebase(new Firebase(firebaseUrl + '/patients/' + patientId + '/assignments/' + assignmentId));
 	 		},
 	 		getUpperBody: function(id){
-	 			return $firebase(new Firebase(firebaseUrl + '/resources/' + 'upper body' + id));
+	 			return $firebase(new Firebase(firebaseUrl + '/resources/upper body' ));
 	 		},
-	 		getLowerBody: function(id){
-	 			return $firebase(new Firebase(firebaseUrl + '/resources/' + 'lower body' + id));
+	 		getLowerBody: function(){
+	 			return $firebase(new Firebase(firebaseUrl + '/resources/lower body'));
+	 		},
+	 		getCardio: function(){
+	 			return $firebase(new Firebase(firebaseUrl + '/resources/cardio'));
 	 		}
 		};
 	});

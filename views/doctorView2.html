@@ -39,34 +39,36 @@ Doctor sets up patient homework
 </div>
 
 </br>
-
-<div>
-    <select class="input-medium" ng-model="exercises">
-        <option value = "" disabled selected>Exercises</option>
-        <option value = "exercises('ankle pump')">Ankle Pump</option>
-        <option value = "7:30">Quadricep Sets</option>
-        <option value = "8:00">Short Arc Quads</option>
-        <option value = "8:30">Chair Squat</option>
-        <option value = "9:00">Heel Slides</option>
-        <option value = "9:30">Stationary Bike</option>   
-        <option value = "10:00">Long Arc Quads</option>
-        <option value = "10:30">Wall Slides</option>
-        <option value = "11:00">Step Up/Down</option>
+<div >
+    <select class="input-medium" ng-model="newAssignment">
+        <option value = "" disabled selected>Upper Body Exercises</option>
+        <option value = "{{upperExercises.externalRotation}}">External Rotation</option>
+        <option value = "{{upperExercises.internalRotation}}">Internal Rotation</option>
     </select>
+        <select class="input-medium" ng-model="newAssignment">
+        <option value = "" disabled selected>Lower Body Exercises</option>
+        <option value = "{{lowerExercises.anklePump}}">Ankle Pumps</option>
+        <option value = "{{lowerExercises.quadSets}}">Quadriceps Setting</option>
+    </select>
+        <select class="input-medium" ng-model="newAssignment">
+        <option value = "" disabled selected>Cardio Exercises</option>
+        <option value = "{{cardio.bike}}">Stationary Bike</option>
+    </select>
+    <button type="button" ng-click ="addAssignment(newAssignment)">submit</button>
+</div>
+<div>
+    {{newAssignment}}
 </div>
 <div class="">
-    <ul  > 
-<!--             <li ng-repeat = "exer in exercises">
- -->            <li>
-                {{exercises}}<br> {{exercises.id}}  <br>
-            </li>
-            
-        </ul>
+    <ul>    
+        <li ng-repeat = "upperExercise in upperExercises">{{upperExercise.name}}</br>
+            <a ng-href = "{{upperExercise.url}}">
+                {{upperExercise.url}}
+            </a>
+        </li>  
+    </ul>
     
 </div>
-
-
-
 
 
 
