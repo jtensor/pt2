@@ -4,6 +4,8 @@ angular
 	.controller('patientCtrl', function($scope, drService, apptRef, assignmentRef) {
     	$scope.appt = apptRef.$asObject();
     	$scope.assignment = assignmentRef.$asObject();
+    	console.log($scope.appt);
+
     	
 	});
-	//may need getPatient here too
+//need to inject patientId somehow
