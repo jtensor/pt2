@@ -1,0 +1,26 @@
+{
+  "name": "pt2",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jtensor/pt2",
+  "authors": [
+    "Jamie Titensor <jamietitensor@gmail.com>"
+  ],
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.10",
+    "angularfire": "~0.8.0",
+    "restangular": "~1.4.0",
+    "firebase": "~1.0.19",
+    "angular": "~1.2.22",
+    "jquery": "~2.1.1",
+    "lodash": "~2.4.1"
+  }
+}
