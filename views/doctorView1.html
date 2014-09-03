@@ -1,36 +1,31 @@
  
 
-	<div class = form>
+<div class = "form">
+Add a new Patient:</br>
+	<input type="text" ng-model="newPatient.firstName" placeholder ="first name">
+	<input type="text" ng-model="newPatient.lastName" placeholder = "last name"><br>
+	<input type="text" ng-model="newPatient.address" placeholder = "street address" size="46"><br>
+	<input type="text" ng-model="newPatient.addressCity" placeholder = "city" size="27">
+	<input type="text" ng-model="newPatient.addressState" placeholder = "state" maxlength="2" size="2">
+	<input type="text" ng-model="newPatient.addressZipcode" placeholder = "zipcode" maxlength="5" size="5"><br>
+	<input type="text" ng-model="newPatient.phone" placeholder = "phone number" maxlength="12" size="13">
+	<input type="text" ng-model="newPatient.email" placeholder = "email address" size="27"><br>
+	<input type="text" ng-model="newPatient.injury" placeholder = "injury" size="46"><br>
+	<button type="button" ng-click ="addPatient(newPatient)">submit</button>
 
-		<input type="text" ng-model="newPatient.firstName" placeholder ="first name">
-		<input type="text" ng-model="newPatient.lastName" placeholder = "last name"><br>
-		<input type="text" ng-model="newPatient.address" placeholder = "street address"><br>
-		<input type="text" ng-model="newPatient.addressCity" placeholder = "city">
-		<input type="text" ng-model="newPatient.addressState" placeholder = "state">
-		<input type="number" ng-model="newPatient.addressZipcode" placeholder = "zipcode"><br>
-		<input type="text" ng-model="newPatient.phone" placeholder = "phone number">
-		<input type="text" ng-model="newPatient.email" placeholder = "email address"><br>
-		<input type="text" ng-model="newPatient.injury" placeholder = "injury"><br>
-		<button type="button" ng-click ="addPatient(newPatient)">submit</button>
+</div>
 
-	</div>
-
-	<div class = "patients">
-		<ul  > 
-			<li ng-repeat = "patient in patients">
-				<a ui-sref="patient({patientId:patient.$id})">
-				{{patient.firstName}} {{patient.lastName}} </a>---  {{patient.injury}}<br>
-				{{patient.address}} <br>
-				{{patient.addressCity}}, {{patient.addressState}}  {{patient.addressZipcode}}<br>   <br>
-			</li>
-			
-		</ul>
-
-
-
-
-		</div>
-	</div>
+<div class = "patients">
+Choose an existing Patient:
+	<ul  ng-repeat = "patient in patients">
+			<a ui-sref="patient({patientId:patient.$id})">
+			{{patient.firstName}} {{patient.lastName}} </a> ---  {{patient.injury}}<br>
+			{{patient.address}} <br>
+			{{patient.addressCity}}, {{patient.addressState}}  {{patient.addressZipcode}}<br> 
+			{{patient.phone}}  <br>
+			{{patient.email}}
+		
+	</ul>
 </div>
 
 

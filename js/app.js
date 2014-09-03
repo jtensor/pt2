@@ -45,20 +45,32 @@ myApp.config(function($stateProvider,$urlRouterProvider){
 	.state('login',{
 		url:'/',
 		templateUrl:'views/loginView.html',
-		controller:'loginCtrl'
+		controller:'loginCtrl',
+		resolve:{
+			apptsRef: function(drService, $stateParams){
+				return drService.getAppts($stateParams.patientId, $stateParams.apptId);
+			},
+			patientsRef: function(drService) {
+				return drService.getPatients();
+			}
+		}
 	})
 	.state('personal',{
 		url:'/personal/:patientId',
 		templateUrl:'views/patientView.html',
 		controller:'patientCtrl',
 		resolve:{
-			apptRef: function(drService, $stateParams){
-				return drService.getAppt($stateParams.patientId);
+			apptsRef: function(drService, $stateParams){
+				return drService.getAppts($stateParams.patientId, $stateParams.apptId);
 			},
-			assignmentRef: function(drService, $stateParams){
-				return drService.getAssignment($stateParams.patientId);
+			assignmentsRef: function(drService, $stateParams){
+				return drService.getAssignments($stateParams.patientId);
+			},
+			patientsRef: function(drService) {
+				return drService.getPatients();
 			}
 		}
+
 	 });
 			
 });

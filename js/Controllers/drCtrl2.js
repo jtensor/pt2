@@ -1,6 +1,6 @@
 angular
 	.module('myApp')
-	.controller('drCtrl2', function($scope, drService, patientRef, apptsRef, assignmentsRef, upperBodyRef, lowerBodyRef, cardioRef){	
+	.controller('drCtrl2', function($scope, $state, drService, patientRef, apptsRef, assignmentsRef, upperBodyRef, lowerBodyRef, cardioRef){	
 		
 		$scope.patient = patientRef.$asObject();
 		$scope.appts = apptsRef.$asArray();
@@ -20,6 +20,10 @@ angular
     	$scope.lowerExercises = lowerBodyRef.$asObject();
     	$scope.upperExercises = upperBodyRef.$asObject();
     	$scope.cardio = cardioRef.$asObject();
+
+    	$scope.go = function(state) {
+  			$state.go(state);
+		};
 	});
 
 

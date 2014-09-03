@@ -1,17 +1,21 @@
+
 <div class="appt">
-	
-	Your next appointment is {{appt.day}}, {{appt.month}} {{appt.number}} @ {{appt.time}} 
+
+		<ul class = "list2" ng-repeat = "appt in appts"> 
+		
+				Your next appointment is:</br>
+				{{appt.day}}, {{appt.month}} {{appt.number}} @ {{appt.time}} <br>
+			<br>   <br>
+
+			
+		</ul>
 </div>
-
-
-<div>
+<div class="hw">
 Your exercises are: </br>
-    <ul>    
-        <li ng-repeat = "assignment in assignments">{{assignment.name}}</br>
+    <ul ng-repeat = "assignment in assignments">{{assignment.name}}</br>
             <a ng-href = "{{assignment.url}}">
                 {{assignment.url}}
-            </a>
-        </li>  
+            </a> 
     </ul>
 
 
@@ -25,4 +29,7 @@ frameborder="0" allowfullscreen>
     </div> -->
 
 
+</div>
+<div>
+    <button ng-click="go('login')">Home</button>
 </div>

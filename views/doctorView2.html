@@ -1,19 +1,29 @@
-Doctor sets up patient homework
+
 <div class = "schedule">
+When do you want to see {{patient.firstName}} {{patient.lastName}} next?
 <br>
 		<select class="input-large" ng-model="newAppt.day" >
 			<option value = "" disabled selected>Day</option>
 	        <option value = "Mon">Monday</option>
 	        <option value = "Tues">Tuesday</option>
 	        <option value = "Wed">Wednesday</option>
-	        <option value = "Thurs">Thursday</option>   
+	        <option value = "Thurs">Thursday</option> 
+            <option value = "Thurs">Friday</option>   
     	</select>
     	<select class="input-large" ng-model="newAppt.month">
     		<option value = "" disabled selected>Month</option>
-	        <option value = "Jan">January</option>
-	        <option value = "Feb">February</option>
-	        <option value = "Mar">March</option>
-	        <option value = "Apr">April</option>   
+	        <option value = "January">January</option>
+	        <option value = "Febuary">February</option>
+	        <option value = "March">March</option>
+	        <option value = "Apr">April</option>  
+            <option value = "May">May</option> 
+            <option value = "June">June</option> 
+            <option value = "July">July</option> 
+            <option value = "August">August</option> 
+            <option value = "September">September</option> 
+            <option value = "October">October</option> 
+            <option value = "November">November</option> 
+            <option value = "December">December</option>  
     	</select>
     	<select class="input-large" ng-model="newAppt.number">
     		<option value = "" disabled selected>Date</option>
@@ -21,6 +31,32 @@ Doctor sets up patient homework
 	        <option value = "2">2</option>
 	        <option value = "3">3</option>
 	        <option value = "4">4</option>   
+            <option value = "5">5</option>
+            <option value = "6">6</option>
+            <option value = "7">7</option>
+            <option value = "8">8</option>
+            <option value = "10">10</option>
+            <option value = "11">11</option>
+            <option value = "12">12</option>
+            <option value = "13">13</option>
+            <option value = "14">14</option>
+            <option value = "15">15</option>
+            <option value = "16">16</option>
+            <option value = "17">17</option>
+            <option value = "18">18</option>
+            <option value = "19">19</option>
+            <option value = "20">20</option>
+            <option value = "21">21</option>
+            <option value = "22">22</option>
+            <option value = "23">23</option>
+            <option value = "24">24</option>
+            <option value = "25">25</option>
+            <option value = "26">26</option>
+            <option value = "27">27</option>
+            <option value = "28">28</option>
+            <option value = "29">29</option>
+            <option value = "30">30</option>
+            <option value = "31">31</option>
     	</select>
     	<select class="input-large" ng-model="newAppt.time">
     		<option value = "" disabled selected>Time</option>
@@ -33,13 +69,26 @@ Doctor sets up patient homework
 	        <option value = "10:00">10:00</option>
 	        <option value = "10:30">10:30</option>
 	        <option value = "11:00">11:00</option>
+            <option value = "11:30">11:30</option>
+            <option value = "12:00">12:00</option>
+            <option value = "12:30">12:30</option>
+            <option value = "1:00">1:00</option>
+            <option value = "1:30">1:30</option>
+            <option value = "2:00">2:00</option>
+            <option value = "2:30">2:30</option>
+            <option value = "3:00">3:00</option>
+            <option value = "3:30">3:30</option>
+            <option value = "4:00">4:00</option>
+            <option value = "4:30">4:30</option>
     	</select>
+        </br>
     	{{newAppt.day}}, {{newAppt.month}} {{newAppt.number}} at {{newAppt.time}}
+        </br>
     	<button type="button" ng-click ="addAppt(newAppt)">submit</button>
 </div>
 
 </br>
-<div >
+<div class="assign">
     <select class="input-medium" ng-model="newAssignment">
         <option value = "" disabled selected>Upper Body Exercises</option>
         <option value = "{{upperExercises.externalRotation}}">External Rotation</option>
@@ -57,19 +106,17 @@ Doctor sets up patient homework
     <button type="button" ng-click ="addAssignment(newAssignment)">submit</button>
 </div>
 <div>
-    {{newAssignment}}
 </div>
-<div class="">
-    <ul>    
-        <li ng-repeat = "upperExercise in upperExercises">{{upperExercise.name}}</br>
-            <a ng-href = "{{upperExercise.url}}">
-                {{upperExercise.url}}
-            </a>
-        </li>  
-    </ul>
-    
+<div class="newAssign">
+    <ul ng-repeat = "assignment in assignments">{{assignment.name}}</br>
+            <a ng-href = "{{assignment.url}}">
+                {{assignment.url}}
+            </a>  
+    </ul>   
 </div>
-
+<div>
+    <button ng-click="go('login')">Home</button>
+</div>
 
 
 
