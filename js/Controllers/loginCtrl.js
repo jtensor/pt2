@@ -3,26 +3,21 @@ angular
 	.controller('loginCtrl', function($scope, drService, patientsRef, apptsRef, $state){
 
 		$scope.logMeIn = function (Name1){
-
 			var appts = apptsRef.$asObject;
 			var patients = patientsRef.$asArray();
 			patients.$loaded().then(function(){
 
-
-			 console.log(patients);
-			 // debugger;
-			for (i = 0; i<patients.length; i++){
-				console.log(patients[i].firstName)
-				if(patients[i].firstName === Name1){
-					$state.go('personal', {patientId:patients[i].$id, apptId:patients[i].appts.$id});
-				}else{
-					alert("That name doesn't exist in our database");
+				for (i = 0; i<patients.length; i++){
+					console.log(patients[i].firstName)
+					
+					if(patients[i].firstName === Name1){
+						$state.go('personal', {patientId:patients[i].$id, apptId:patients[i].appts.$id});
+					}else{
+						alert("That name doesn't exist in our database");
+					}
 				}
-			}
-			// $scope.go = function(path){
-			// 		$state.go(path);
-			// 	};
-		});
+
+			});
 		};
 
 		$scope.go = function(state) {

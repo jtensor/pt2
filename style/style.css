@@ -1,11 +1,12 @@
 html {
     /*background: #ffffff url("http://www.hdwallpapersjet.com/wp-content/uploads/2014/06/little-river-streaming-through-the-rocks.jpg") no-repeat center top;*/
-    background-image: url("img/mountain-stream-gentle4.jpg");
+   /* background-image: url("img/mountain-stream-gentle4.jpg");
     opacity: .9;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover;*/
+    background-color: #242424;
 }
 .button{
 	width: 20px;
@@ -28,7 +29,7 @@ html {
 	background-color:hsla(0, 0%, 0%, 0.81);
 	color:white;
 	height:200px;
-	width: 500px;
+	width: 600px;
 	text-align: left;
 	font-family: 'Karla', sans-serif;
 	position: relative;
@@ -40,14 +41,16 @@ html {
 .patients{
 	background-color:hsla(0, 0%, 0%, 0.81);
 	color:white;
-	height:800px;
-	width: 500px;
+	height:400px;
+	width: 600px;
 	text-align: left;
 	font-family: 'Karla', sans-serif;
 	position: relative;
 	margin-left: 500px;
 	padding-top: 25px;
 	padding-left: 25px;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 a:link {
     color: #87d4fa;
@@ -62,55 +65,60 @@ a:hover {
 	background-color:hsla(0, 0%, 0%, 0.81);
 	color:white;
 	height:100px;
-	width: 500px;
+	width: 600px;
 	text-align: center;
 	font-family: 'Karla', sans-serif;
 	position: relative;
 	margin-left: 500px;
 	margin-top: 100px;
+	padding-top: 25px;
 }
 .assign{
 	background-color:hsla(0, 0%, 0%, 0.81);
 	color:white;
-	height:200px;
-	width: 500px;
+	height:75px;
+	width: 600px;
 	text-align: center;
 	font-family: 'Karla', sans-serif;
 	position: relative;
 	margin-left: 500px;
+	padding-top: 25px;
 }
 .newAssign{
 	background-color:hsla(0, 0%, 0%, 0.81);
 	color:white;
-	height:200px;
-	width: 500px;
+	height:400px;
+	width: 600px;
 	text-align: center;
 	font-family: 'Karla', sans-serif;
 	position: relative;
 	margin-left: 500px;
+	padding-top: 25px;
 }
 .appt{
 	background-color:hsla(0, 0%, 0%, 0.81);
 	color:white;
 	height:100px;
-	width: 600px;
+	width: 60%;
 	text-align: center;
 	font-family: 'Karla', sans-serif;
 	font-size: 24;
 	position: relative;
-	margin-left: 400px;
+	margin-left: 300px;
 	margin-top: 50px;
 	padding-top: 25px;
 }
 .hw{
 	background-color:hsla(0, 0%, 0%, 0.81);
 	color:white;
-	height:600px;
-	width: 600px;
+	height:80%;
+	width: 60%;
 	text-align: center;
 	font-family: 'Karla', sans-serif;
 	position: relative;
-	margin-left: 400px;
+	margin-left: 300px;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 

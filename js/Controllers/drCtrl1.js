@@ -4,7 +4,7 @@ angular
 	
   $scope.patients = patientsRef.$asArray();
 
-  $scope.addPatient= function(newPatient){
+  $scope.addPatient = function(newPatient){
       $scope.patients.$add(newPatient);
     };
 
