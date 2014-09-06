@@ -1,31 +1,151 @@
- 
+<style type="text/css">
+    .info1{
+    	height:85%;
+    	overflow-y:scroll;
+    	width:100%;
+    	overflow-x:hidden;
+    }
+    .container{
+        margin-top: 2%;
+    }
+</style>
 
-<div class = "form">
-Add a new Patient: </br>
-	<input type = "text" ng-model = "newPatient.firstName" placeholder ="first name">
-	<input type = "text" ng-model = "newPatient.lastName" placeholder = "last name"><br>
-	<input type = "text" ng-model = "newPatient.address" placeholder = "street address" size = "46"><br>
-	<input type = "text" ng-model = "newPatient.addressCity" placeholder = "city" size = "27">
-	<input type = "text" ng-model = "newPatient.addressState" placeholder = "state" maxlength = "2" size = "2">
-	<input type = "text" ng-model = "newPatient.addressZipcode" placeholder = "zipcode" maxlength = "5" size = "5"><br>
-	<input type = "text" ng-model = "newPatient.phone" placeholder = "phone number" maxlength = "12" size = "13">
-	<input type = "text" ng-model = "newPatient.email" placeholder = "email address" size = "27"><br>
-	<input type = "text" ng-model = "newPatient.injury" placeholder = "injury" size = "46"><br>
-	<button type = "button" ng-click = "addPatient(newPatient)">submit</button>
-
+<div class="container">
+<div class="col-lg-5">
+    <div class="well bs-component">
+        <div class="info1">
+            <form class="form-horizontal">
+                <fieldset>
+                    <h1>Add a new Patient: </h1>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" for="inputEmail">Email:</label>
+                            <div class="col-xs-6">
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model = "newPatient.email">
+                            </div>
+                        </div>
+                <!--         <div class="form-group">
+                            <label class="control-label col-xs-3" for="inputPassword">Password:</label>
+                            <div class="col-xs-6">
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model = "newPatient.password">
+                            </div>
+                        </div> -->
+                <!--         <div class="form-group">
+                            <label class="control-label col-xs-3" for="confirmPassword">Confirm Password:</label>
+                            <div class="col-xs-6">
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                            </div>
+                        </div> -->
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" for="firstName">First Name:</label>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name" ng-model = "newPatient.firstName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" for="lastName">Last Name:</label>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name" ng-model = "newPatient.lastName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" for="injury">Injury:</label>
+                            <div class="col-xs-6">
+                                <textarea rows="3" class="form-control" id="injury" placeholder="Injury" ng-model = "newPatient.injury"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" for="phoneNumber">Phone:</label>
+                            <div class="col-xs-6">
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number" ng-model = "newPatient.phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" for="streetAddress">Street Address:</label>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="streetAddress" placeholder="Street Address" ng-model = "newPatient.address">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" for="City">City:</label>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="City" placeholder="City" ng-model = "newPatient.addressCity">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" for="State">State:</label>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="State" placeholder="State" ng-model = "newPatient.addressState">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-3" for="ZipCode">Zip Code:</label>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="ZipCode" placeholder="Zip Code" ng-model = "newPatient.addressZipcode">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="col-xs-offset-3 col-xs-6">
+                                <input type="submit" class="btn btn-warning" ng-click = "addPatient(newPatient)" value="Submit">
+                                <input type="reset" class="btn btn-primary" value="Reset">
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 </div>
 
-<div class = "patients">
-Choose an existing Patient:
-	<ul  ng-repeat = "patient in patients">
-			<a ui-sref = "patient({patientId:patient.$id})">
-			{{patient.firstName}} {{patient.lastName}} </a> ---  {{patient.injury}}<br>
-			{{patient.address}} <br>
-			{{patient.addressCity}}, {{patient.addressState}}  {{patient.addressZipcode}}<br> 
-			{{patient.phone}}  <br>
-			{{patient.email}}
-		
-	</ul>
-</div>
+
+<style type="text/css">
+    .info{
+    	height:85%;
+    	overflow-y:scroll;
+    	width:100%;
+    }
+</style>
+
+
+
+<div class="col-lg-7">
+    <div class="well bs-component">
+        <div class="info">
+            <fieldset>
+                <h1>Choose an existing Patient:</h1>
+                <div >
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Injury</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Phone Number</th>
+                <!--                 <th>Password</th> -->
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat = "patient in patients">
+                            <tr class="text-default">
+                                <td><a ui-sref = "patient({patientId:patient.$id})">{{patient.firstName}} {{patient.lastName}}</a></td>
+                                <td class="text-info">{{patient.injury}}</td>
+                                <td class="text-info">{{patient.email}}</td>
+                                <td class="text-info">{{patient.address}}  {{patient.addressCity}}, {{patient.addressState}}   {{patient.addressZipcode}}</td>
+                                <td class="text-info">{{patient.phone}}</td>
+                <!--                 <td>** {{patient.password}} **</td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+     </div>
+ </div>
+ </div>
+
+
+
+
 
 

@@ -1,47 +1,49 @@
-
-<div class = "appt">
-
-		<ul class = "list2" ng-repeat = "appt in appts"> 
-		
-				Your next appointment is:</br>
-				{{appt.day}}, {{appt.month}} {{appt.number}} @ {{appt.time}} <br>
-			<br>   <br>
-
-			
-		</ul>
-</div>
-<div class = "hw">
-<h3>Your exercises are: </h3>
-    <div ng-repeat = "assignment in assignments">{{assignment.name}}</br></br>
-<!--         <a ng-href = "{{assignment.url}}">
-            {{assignment.url}}
-        </a>  -->
-		<object width="640" height="470" data="{{assignment.url}}" align="center">
-		</object></br></br>
-    </div>
-
-
-
-
-<!-- try it
-<embed width="420" height="315" src="https://www.youtube.com/v/kVt4fgia1jc">
-try it again
-<object width="420" height="315"
-data="{{assignment.url}}">
-</object>
-And again
--->
-<!-- <div class="logo" ng-controller='videoCtrl'></div> -->
-
-
-<!--     <div>
-    	<iframe id="ytplayer" type="text/html" width="640" height="360"
-src="https://www.youtube.com/embed/M7lc1UVf-VE"
-frameborder="0" allowfullscreen>
-    </div> -->
-
-
-</div>
 <div>
-    <button ng-click = "go('login')">Home</button>
+    <button class="btn btn-warning" ng-click = "go('login')">
+        <span class="glyphicon glyphicon-home"></span> Home
+    </button>
 </div>
+
+<style type="text/css">
+    .assign{
+        height:70%;
+        overflow-y:scroll;
+        width:100%;
+        margin-left: 10%;
+        margin-top: 5%;
+        text-align: center;
+    }
+</style>
+<div class="assign">
+	<div class="col-lg-9">
+	    <div class="well bs-component">
+
+			<ul class = "" ng-repeat = "appt in appts"> 
+					<h1>Your next appointment is:</h1>
+					<h3 class="text-warning">{{appt.day}}, {{appt.month}} {{appt.number}} @ {{appt.time}}</h3>
+			</ul>
+
+			<h1>Your exercises are: </h1>
+		    <div ng-repeat = "assignment in assignments">
+		    <h3 class="text-warning">{{assignment.name}}</h3>
+				<object width="640" height="470" data="{{assignment.url}}" align="center">
+				</object>
+		    </div>
+	    </div>
+	</div>
+</div>
+
+
+<!-- 16:9 aspect ratio -->
+<!-- <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="…"></iframe>
+</div>
+
+4:3 aspect ratio
+<div class="embed-responsive embed-responsive-4by3">
+  <iframe class="embed-responsive-item" src="…"></iframe>
+</div> -->
+
+
+
+
