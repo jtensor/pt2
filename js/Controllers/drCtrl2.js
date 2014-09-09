@@ -34,6 +34,13 @@ angular
         }
         };
 
+        $scope.writeID = function(o){
+              assignments.$remove(o.$id);
+            }
+        $scope.redo = function(o){
+              assignments.$remove(o.$id);
+            }
+
         $scope.exerciseModel = [];
         $scope.exerciseText = {buttonDefaultText: 'Select Exercises'};
         $scope.exerciseData =[ {id: "{{upperExercises.externalRotation}}", label: "External Rotation", type: "upper"},

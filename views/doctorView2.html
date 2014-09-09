@@ -6,8 +6,8 @@
         margin-left: 10%;
         margin-top: 5%;
     }
-    .line{
-        display: inline-block;
+    .danger{
+        color:#34495E;
     }
 </style>
       
@@ -162,11 +162,15 @@
                 </div>
                     <button class="btn btn-warning" ng-click = "addAssignment(newAssignment)">Save</button>
                     <button class = "btn btn-primary" ng-click = "removeAssignments()">
-                    <span class="glyphicon glyphicon-remove"></span>  Remove Exercises
+                    <span class="glyphicon glyphicon-remove danger"></span>  Remove Exercises
                     </button>
-                
+                    <button class = "btn btn-danger" ng-click = "$remove(assignments)">Remove Exercises
+                    </button> 
+                    
+                    <!--This SHOULD work, actually gets the values -->
                 <div class = "">
-                    <ul ng-repeat = "assignment in assignments">{{assignment.name}}
+                    <ul ng-repeat = "assignment in assignments">{{assignment.name}}  
+                    <span class="glyphicon glyphicon-remove danger" ng-click="redo(assignment)">  </span><hr>
     <!--                         <a ng-href = "{{assignment.url}}">
                                 {{assignment.url}}
                             </a>  --> 
