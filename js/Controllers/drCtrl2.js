@@ -27,10 +27,30 @@ angular
   			$state.go(state);
 		};
 
-// $scope.example5model = []; 
-// $scope.example5data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"}]; 
-// $scope.example5settings = {}; 
-// $scope.example5customTexts = {buttonDefaultText: 'Select Users'}
+        var assignments = $scope.assignments;
+        $scope.removeAssignments = function(assignments){
+            for( i = 0; i<assignments.length; i++){
+                $scope.assignments.$remove(i);
+        }
+        };
+
+        $scope.exerciseModel = [];
+        $scope.exerciseText = {buttonDefaultText: 'Select Exercises'};
+        $scope.exerciseData =[ {id: "{{upperExercises.externalRotation}}", label: "External Rotation", type: "upper"},
+                    {id: "{{upperExercises.internalRotation}}", label: "Internal Rotation", type: "upper"},
+                    {id: "{{lowerExercises.anklePump}}", label: "Ankle Pumps", type: "lower"},
+                    {id: "{{lowerExercises.quadSets}}", label: "Quadriceps Setting", type: "lower"}
+                     ];
+        $scope.exerciseSettings = { groupByTextProvider: function(groupValue) {
+            if (groupValue === 'upper'){
+                return 'Upper Body';
+            } else {
+                return 'Lower Body';
+            }
+        }
+        };
+
+
 
 
 	});

@@ -1,7 +1,7 @@
 // angular
 // 	.module('myApp',['ui.router', 'firebase'])
 
-var myApp = angular.module('myApp', ['ui.router', 'firebase']);	
+var myApp = angular.module('myApp', ['ui.router', 'firebase', 'angularjs-dropdown-multiselect']);	
 
 myApp.config(function($stateProvider,$urlRouterProvider){
 	$urlRouterProvider.otherwise('/');

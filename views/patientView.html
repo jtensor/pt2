@@ -6,12 +6,22 @@
 
 <style type="text/css">
     .assign{
-        height:70%;
+        height:75%;
         overflow-y:scroll;
         width:100%;
         margin-left: 10%;
         margin-top: 5%;
         text-align: center;
+    }
+    .name
+    {
+        color:#F1C40F;
+        font-size: 24px;
+    }
+    .hideText
+    {
+        color: white;
+        font-size: 14px;
     }
 </style>
 <div class="assign">
@@ -24,25 +34,147 @@
 			</ul>
 
 			<h1>Your exercises are: </h1>
-		    <div ng-repeat = "assignment in assignments">
-		    <h3 class="text-warning">{{assignment.name}}</h3>
-				<object width="640" height="470" data="{{assignment.url}}" align="center">
-				</object>
-		    </div>
-	    </div>
+			<div class ="" ng-repeat = "assignment in assignments">
+				<span class="name">{{assignment.name}}      </span>&nbsp;
+				<span class="hideText">Hide Video<input type="checkbox" ng-model="checked"></span>
+				<div class="videoHide" ng-hide="checked">
+    				<div class="video">
+				    	<object width="640" height="470" data="{{assignment.url}}" align="center">
+						</object>
+						<div>
+							<h1></h1>
+						</div>
+				   </div>
+  				</div>
+	    	</div>
+		</div>
 	</div>
 </div>
 
 
-<!-- 16:9 aspect ratio -->
-<!-- <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="…"></iframe>
-</div>
+<!-- <span class="redText">My Name is:</span><span class="blackText">Tintincute</span> -->
 
-4:3 aspect ratio
-<div class="embed-responsive embed-responsive-4by3">
-  <iframe class="embed-responsive-item" src="…"></iframe>
+<!-- Video skin attempt - ignore for now -->
+ 
+<!-- <div>
+	<div id="vjs_video_4" class="video-js vjs-paused vjs-controls-enabled vjs-user-inactive" style="width: 620px; height: 349px;">
+	<video class="vjs-tech" preload="auto" poster="images/video/poster.jpg" data-setup="{}" id="vjs_video_4_html5_api">
+             
+             <source src="https://www.youtube.com/v/UmuBpaGANxw" type="video/mp4">
+              <source src="https://www.youtube.com/v/UmuBpaGANxw" type="video/webm">
+            </video>
+            <div>
+            	
+            </div>
+            <div class="vjs-poster" tabindex="-1" style="background-image: url(http://designmodo.github.io/Flat-UI/images/video/poster.jpg);">
+            	
+            </div>
+            <div class="vjs-text-track-display">
+            	
+            </div>
+            <div class="vjs-loading-spinner" style="display: none;">
+            	
+            </div>
+            <div class="vjs-big-play-button" aria-live="polite" tabindex="0" aria-label="play video">
+            <span aria-hidden="true"></span>
+            </div>
+            <div class="vjs-control-bar">
+            <div class="vjs-play-control vjs-control " aria-live="polite" tabindex="0">
+            <div class="vjs-control-content">
+            <span class="vjs-control-text">Play</span>
+            </div>
+            </div>
+            <div class="vjs-current-time vjs-time-controls vjs-control">
+            <div class="vjs-current-time-display" aria-live="off">
+            <span class="vjs-control-text">Current Time </span>0:00
+            </div>
+            </div>
+            <div class="vjs-time-divider">
+            <div>
+            <span>/</span>
+            </div>
+            </div>
+            <div class="vjs-duration vjs-time-controls vjs-control">
+            <div class="vjs-duration-display" aria-live="off">
+            <span class="vjs-control-text">Duration Time </span>0:29
+            </div>
+            </div>
+            <div class="vjs-remaining-time vjs-time-controls vjs-control">
+            <div class="vjs-remaining-time-display" aria-live="off">
+            <span class="vjs-control-text">Remaining Time </span>-0:29
+            </div>
+            </div>
+            <div class="vjs-progress-control vjs-control">
+            <div aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" tabindex="0" class="vjs-progress-holder vjs-slider" aria-label="video progress bar" aria-valuetext="0:00">
+            <div class="vjs-load-progress" style="width: 34.66%;">
+            <span class="vjs-control-text">Loaded: 0%</span>
+            </div>
+            <div class="vjs-play-progress" style="width: 2.37%;">
+            <span class="vjs-control-text">Progress: 0%</span>
+            </div>
+            <div class="vjs-seek-handle vjs-slider-handle" style="left: 0%;">
+            <span class="vjs-control-text">00:00</span>
+            </div>
+            </div>
+            </div>
+            <div class="vjs-fullscreen-control vjs-control " aria-live="polite" tabindex="0">
+            <div class="vjs-control-content">
+            <span class="vjs-control-text">Fullscreen</span>
+            </div>
+            </div>
+            <div class="vjs-volume-control vjs-control">
+            <div aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" tabindex="0" class="vjs-volume-bar vjs-slider" aria-label="volume level" aria-valuetext="100%">
+            <div class="vjs-volume-level" style="width: 100%;">
+            <span class="vjs-control-text"></span>
+            </div>
+            <div class="vjs-volume-handle vjs-slider-handle" style="left: 100%;">
+            <span class="vjs-control-text">00:00</span>
+            </div>
+            </div>
+            </div>
+            <div class="vjs-mute-control vjs-control" aria-live="polite" tabindex="0">
+            <div>
+            <span class="vjs-control-text">Mute</span>
+            </div>
+            </div>
+            <div class="vjs-subtitles-button vjs-menu-button vjs-control " aria-live="polite" tabindex="0" aria-haspopup="true" role="button" aria-label="Subtitles Menu" style="display: none;">
+            <div class="vjs-control-content">
+            <span class="vjs-control-text">Subtitles</span>
+            </div>
+            <div class="vjs-menu">
+            <ul class="vjs-menu-content">
+            <li class="vjs-menu-item vjs-selected" aria-live="polite" tabindex="0" aria-selected="true">subtitles off
+            </li>
+            </ul>
+            </div>
+            </div>
+            <div class="vjs-captions-button vjs-menu-button vjs-control " aria-live="polite" tabindex="0" aria-haspopup="true" role="button" aria-label="Captions Menu" style="display: none;">
+            <div class="vjs-control-content">
+            <span class="vjs-control-text">Captions</span>
+            </div>
+            <div class="vjs-menu">
+            <ul class="vjs-menu-content">
+            <li class="vjs-menu-item vjs-selected" aria-live="polite" tabindex="0" aria-selected="true">captions off
+            </li>
+            </ul>
+            </div>
+            </div>
+            <div class="vjs-chapters-button vjs-menu-button vjs-control " aria-live="polite" tabindex="0" aria-haspopup="true" role="button" aria-label="Chapters Menu" style="display: none;">
+            <div class="vjs-control-content">
+            <span class="vjs-control-text">Chapters</span>
+            </div>
+            <div class="vjs-menu">
+            <ul class="vjs-menu-content">	
+            </ul>
+            <li class="vjs-menu-title">Chapters
+            </li>
+            </div>
+            </div>
+            </div>
+            </div> 
 </div> -->
+
+
 
 
 

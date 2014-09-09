@@ -6,8 +6,11 @@
         margin-left: 10%;
         margin-top: 5%;
     }
+    .line{
+        display: inline-block;
+    }
 </style>
-
+      
 <div>
     <button class="btn btn-warning" ng-click = "go('login')">
         <span class="glyphicon glyphicon-home"></span> Home
@@ -29,7 +32,7 @@
                 </select>
             </div>
 
-<!--     <div ng-dropdown-multiselect="" options="example5data" selected-model="example5model" extra-settings="example5settings" translation-texts="example5customTexts"></div> -->     
+   
 
 <!-- 
             <div class="btn-group">
@@ -129,34 +132,46 @@
                 </br>
                 </br>
 
-            <div class="col-xs-3">
+<!--             <div class="col-xs-3">
                 <select class = "form-control" ng-model = "newAssignment">
                     <option value = "" disabled selected>Upper Body Exercises</option>
                     <option value = "{{upperExercises.externalRotation}}">External Rotation</option>
                     <option value = "{{upperExercises.internalRotation}}">Internal Rotation</option>
                 </select>
-            </div>
-            <div class="col-xs-3">    
-                <select class = "form-control" ng-model = "newAssignment">
-                    <option value = "" disabled selected>Lower Body Exercises</option>
-                    <option value = "{{lowerExercises.anklePump}}">Ankle Pumps</option>
-                    <option value = "{{lowerExercises.quadSets}}">Quadriceps Setting</option>
-                </select>
-            </div>
-            <div class="col-xs-3">    
-                <select class = "form-control" ng-model = "newAssignment">
-                    <option value = "" disabled selected>Cardio Exercises</option>
-                    <option value = "{{cardio.bike}}">Stationary Bike</option>
-                </select>
-            </div>
-                <button class="btn btn-warning" ng-click = "addAssignment(newAssignment)">Save</button>
-            
-            <div class = "">
-                <ul ng-repeat = "assignment in assignments">{{assignment.name}}
-<!--                         <a ng-href = "{{assignment.url}}">
-                            {{assignment.url}}
-                        </a>  --> 
-                </ul>   
+            </div> -->
+
+
+    <!-- 
+                <div class="col-xs-3">    
+                    <select class = "form-control" ng-model = "newAssignment">
+                        <option value = "" disabled selected>Lower Body Exercises</option>
+                        <option value = "{{lowerExercises.anklePump}}">Ankle Pumps</option>
+                        <option value = "{{lowerExercises.quadSets}}">Quadriceps Setting</option>
+                    </select>
+                </div>
+                <div class="col-xs-3">    
+                    <select class = "form-control" ng-model = "newAssignment">
+                        <option value = "" disabled selected>Cardio Exercises</option>
+                        <option value = "{{cardio.bike}}">Stationary Bike</option>
+                    </select>
+                </div> --> 
+
+
+           <div class="btn-toolbar">
+                <div ng-dropdown-multiselect="" options="exerciseData" selected-model = "exerciseModel" ng-model = "newAssignment" extra-settings="exerciseSettings" translation-texts="exerciseText" group-by="type">
+                </div>
+                    <button class="btn btn-warning" ng-click = "addAssignment(newAssignment)">Save</button>
+                    <button class = "btn btn-primary" ng-click = "removeAssignments()">
+                    <span class="glyphicon glyphicon-remove"></span>  Remove Exercises
+                    </button>
+                
+                <div class = "">
+                    <ul ng-repeat = "assignment in assignments">{{assignment.name}}
+    <!--                         <a ng-href = "{{assignment.url}}">
+                                {{assignment.url}}
+                            </a>  --> 
+                    </ul>   
+                </div>
             </div>
         </div>
     </div>
