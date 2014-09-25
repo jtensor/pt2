@@ -1,3 +1,8 @@
+<style type="text/css">
+    input{
+        text-align: center
+    }
+</style>
 <div class="">
 	<button ng-click="go('home')" class="btn btn-warning btn-xs">
 		For the Physical Therapist/</br>
@@ -11,7 +16,8 @@
 	<button ng-click="logMeIn()" class="btn btn-danger btn-xs" >
 		For the Patient Experience </br> 
 		first type a patient's name </br>
-		<input type="text" ng-model="Name1" placeholder="first name only" data-toggle="tooltip" title="May I suggest a name to try? How about Captain? or Super? ">
+		<input type="text" ng-model="Name1" class="text-capitalize" placeholder="first name only" data-toggle="tooltip" title="May I suggest a name to try? How about Captain? or Natasha? or Tony? or Thor? perhaps ">
+		<h6>(Captain, Natasha, Tony, Thor, or anyone you've added)</h6>
 	</button>
 </div>
 

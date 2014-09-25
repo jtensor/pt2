@@ -31,20 +31,6 @@
                     <option value = "Friday">Friday</option>   
                 </select>
             </div>
-
-   
-
-<!-- 
-            <div class="btn-group">
-                <button ng-model = "newAppt.month" class="btn btn-primary btn-md dropdown-toggle" type="button" data-toggle="dropdown">Day <span class="caret"></span>
-                    <li value = "Mon">Monday</li>
-                    <li value = "Tues">Tuesday</li>
-                    <li value = "Wed">Wednesday</li>
-                    <li value = "Thurs">Thursday</li> 
-                    <li value = "Thurs">Friday</li>   
-                </button>
-            </div> -->
-
             <div class="col-xs-2">
             	<select class="form-control" ng-model = "newAppt.month">
             		<option value = "" disabled selected>Month</option>
@@ -122,59 +108,71 @@
                     <option value = "4:30">4:30</option>
                 </select>
             </div>
+           
+                <button class="btn btn-warning" ng-click = "addAppt(newAppt)">Save</button>  
+                  </br>
+                  <div>
+                <!-- <div class="box" ng-show="{{showing}}"> -->
+                    <!-- <h3 class="" ng-show="{{showing}}">{{newAppt.day}}, {{newAppt.month}} {{newAppt.number}} at {{newAppt.time}}</h3> -->
+                    <h3>{{newAppt.day}}, {{newAppt.month}} {{newAppt.number}} at {{newAppt.time}}</h3> 
+                </div>
+    	   
 
-            <button class="btn btn-warning" ng-click = "addAppt(newAppt)">Save</button>  
-              </br>
-            <h3>{{newAppt.day}}, {{newAppt.month}} {{newAppt.number}} at {{newAppt.time}}</h3>
-    	
     	    
                 </br>
                 </br>
                 </br>
 
-<!--             <div class="col-xs-3">
+            <div class="col-xs-3">
                 <select class = "form-control" ng-model = "newAssignment">
                     <option value = "" disabled selected>Upper Body Exercises</option>
                     <option value = "{{upperExercises.externalRotation}}">External Rotation</option>
                     <option value = "{{upperExercises.internalRotation}}">Internal Rotation</option>
+                    <option value = "{{upperExercises.W}}">'W' exercise</option>
+                    <option value = "{{upperExercises.wallBall}}">Ball on the Wall</option>
+                    <option value = "{{upperExercises.biceps}}">Bicep Curl</option>
+                    <option value = "{{upperExercises.T}}">Standing T</option>
+                    <option value = "{{upperExercises.forwardPunch}}">Forward Punch</option>
+                    <option value = "{{upperExercises.hug}}">Dynamic Hug</option>
+                    <option value = "{{upperExercises.row}}">Row</option>
                 </select>
-            </div> -->
+            </div>
 
+            <div class="col-xs-3">    
+                <select class = "form-control" ng-model = "newAssignment">
+                    <option value = "" disabled selected>Lower Body Exercises</option>
+                    <option value = "{{lowerExercises.anklePump}}">Ankle Pumps</option>
+                    <option value = "{{lowerExercises.quadSets}}">Quadriceps Setting</option>
+                    <option value = "{{lowerExercises.heelSlides}}">Heel Slides</option>
+                    <option value = "{{lowerExercises.hipAbduct}}">Hip Abduction</option>
+                    <option value = "{{lowerExercises.legRaise}}">Straight Leg Raises</option>
+                    <option value = "{{lowerExercises.longArc}}">Long Arc Quads</option>
+                    <option value = "{{lowerExercises.shortArc}}">Short Arc Quads</option>
+                    <option value = "{{lowerExercises.luck}}">Good Luck</option>
+                </select>
+            </div>
 
-    <!-- 
-                <div class="col-xs-3">    
-                    <select class = "form-control" ng-model = "newAssignment">
-                        <option value = "" disabled selected>Lower Body Exercises</option>
-                        <option value = "{{lowerExercises.anklePump}}">Ankle Pumps</option>
-                        <option value = "{{lowerExercises.quadSets}}">Quadriceps Setting</option>
-                    </select>
-                </div>
-                <div class="col-xs-3">    
-                    <select class = "form-control" ng-model = "newAssignment">
-                        <option value = "" disabled selected>Cardio Exercises</option>
-                        <option value = "{{cardio.bike}}">Stationary Bike</option>
-                    </select>
-                </div> --> 
 
 
            <div class="btn-toolbar">
-                <div ng-dropdown-multiselect="" options="exerciseData" selected-model = "exerciseModel" ng-model = "newAssignment" extra-settings="exerciseSettings" translation-texts="exerciseText" group-by="type">
-                </div>
+                <!-- <div ng-dropdown-multiselect="" options="exerciseData" selected-model = "exerciseModel" extra-settings="exerciseSettings" translation-texts="exerciseText" group-by="type">
+                </div> -->
+<!-- 
+                addAssignment(exerciseModel)” and parse that object in “addAssignment()”. -->
+
+
                     <button class="btn btn-warning" ng-click = "addAssignment(newAssignment)">Save</button>
-                    <button class = "btn btn-primary" ng-click = "removeAssignments()">
-                    <span class="glyphicon glyphicon-remove danger"></span>  Remove Exercises
-                    </button>
-                    <button class = "btn btn-danger" ng-click = "$remove(assignments)">Remove Exercises
-                    </button> 
-                    
-                    <!--This SHOULD work, actually gets the values -->
+
                 <div class = "">
+                    <h5>
                     <ul ng-repeat = "assignment in assignments">{{assignment.name}}  
-                    <span class="glyphicon glyphicon-remove danger" ng-click="redo(assignment)">  </span><hr>
+                    
+                        <span class="glyphicon glyphicon-remove danger" ng-click="redo(assignment)">  </span><hr>
     <!--                         <a ng-href = "{{assignment.url}}">
                                 {{assignment.url}}
                             </a>  --> 
-                    </ul>   
+                    </ul> </h5>
+                      
                 </div>
             </div>
         </div>

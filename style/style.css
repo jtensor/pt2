@@ -18,7 +18,7 @@ html {
 	height: 300px;
 	width: 400px;
 	text-align: center;
-	font-family: 'Karla', sans-serif;
+	/*font-family: 'Karla', sans-serif;*/
 	font-size: 25;
 	position: relative;
 	margin-left: 500px;
@@ -31,7 +31,7 @@ html {
 	height:200px;
 	width: 600px;
 	text-align: left;
-	font-family: 'Karla', sans-serif;
+	/*font-family: 'Karla', sans-serif;*/
 	position: relative;
 	margin-left: 500px;
 	margin-top: 100px;
@@ -44,7 +44,7 @@ html {
 	height:400px;
 	width: 600px;
 	text-align: left;
-	font-family: 'Karla', sans-serif;
+	/*font-family: 'Karla', sans-serif;*/
 	position: relative;
 	margin-left: 500px;
 	padding-top: 25px;
@@ -67,7 +67,7 @@ a:hover {
 	height:100px;
 	width: 600px;
 	text-align: center;
-	font-family: 'Karla', sans-serif;
+	/*font-family: 'Karla', sans-serif;*/
 	position: relative;
 	margin-left: 500px;
 	margin-top: 100px;
@@ -79,7 +79,7 @@ a:hover {
 	height:75px;
 	width: 600px;
 	text-align: center;
-	font-family: 'Karla', sans-serif;
+	/*font-family: 'Karla', sans-serif;*/
 	position: relative;
 	margin-left: 500px;
 	padding-top: 25px;
@@ -93,7 +93,7 @@ a:hover {
 	height:400px;
 	width: 600px;
 	text-align: center;
-	font-family: 'Karla', sans-serif;
+	/*font-family: 'Karla', sans-serif;*/
 	position: relative;
 	margin-left: 500px;
 	padding-top: 25px;
@@ -104,7 +104,7 @@ a:hover {
 	height:100px;
 	width: 60%;
 	text-align: center;
-	font-family: 'Karla', sans-serif;
+	/*font-family: 'Karla', sans-serif;*/
 	font-size: 24;
 	position: relative;
 	margin-left: 300px;
@@ -117,7 +117,7 @@ a:hover {
 	height:80%;
 	width: 60%;
 	text-align: center;
-	font-family: 'Karla', sans-serif;
+	/*font-family: 'Karla', sans-serif;*/
 	position: relative;
 	margin-left: 300px;
 	overflow-y: scroll;
